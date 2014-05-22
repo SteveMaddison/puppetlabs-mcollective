@@ -10,6 +10,7 @@ class mcollective (
   $activemq_memoryUsage = '20 mb',
   $activemq_storeUsage = '1 gb',
   $activemq_tempUsage = '100 mb',
+  $activemq_heartbeat_interval = undef,
   $activemq_console = false, # ubuntu why you no jetty.xml!
   $activemq_config = undef,
   $activemq_confdir = $mcollective::defaults::activemq_confdir,

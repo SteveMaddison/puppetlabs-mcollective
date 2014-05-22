@@ -16,6 +16,12 @@ class mcollective::common::config::connector::activemq {
     value => 'true',
   }
 
+  if $mcollective::activemq_heartbeat_interval {
+    mcollective::common::setting { 'plugin.activemq.heartbeat_interval':
+      value => $mcollective::activemq_heartbeat_interval,
+    }
+  }
+
   $pool_size = size($mcollective::middleware_hosts)
   mcollective::common::setting { 'plugin.activemq.pool.size':
     value => $pool_size,
